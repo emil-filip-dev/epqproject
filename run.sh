@@ -1,2 +1,1 @@
-scl enable rh-python36 bash
-python -m flask run
+python3.6 -m flask run
