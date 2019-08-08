@@ -1,27 +1,33 @@
-from flask import send_from_directory
+from flask import send_from_directory, render_template
 from app import app
 
 
-@app.route('/')
+@app.route("/")
+@app.route("/index")
 def index():
-    return send_from_directory('html', filename="index.html")
+    return render_template("main.html", content="/html/index.html")
 
 
-@app.route('/<string:page>')
-def html(page):
-    return send_from_directory("html", filename=(page + ".html"))
+@app.route("/html/<path:file>")
+def html(file):
+    return send_from_directory("html", file)
 
 
-@app.route('/<string:tab>/<string:page>')
-def html_tab(tab, page):
-    return send_from_directory(directory=("html/" + tab), filename=(page + ".html"))
-
-
-@app.route('/js/<path:file>')
+@app.route("/js/<path:file>")
 def js(file):
-    return send_from_directory("js", filename=(file + ".js"))
+    return send_from_directory("js", file)
 
 
-@app.route('/css/<path:file>')
+@app.route("/css/<path:file>")
 def css(file):
-    return send_from_directory("css", filename=(file + ".css"))
+    return send_from_directory("css", file)
+
+
+@app.route("/<string:tab>/<string:page>")
+def page(tab, page):
+    return render_template("main.html", content=("/html/" + tab + "/" + page + ".html"))
+
+
+@app.route("/quiz")
+def quiz():
+    return render_template("main.html", content="/html/quiz.html")

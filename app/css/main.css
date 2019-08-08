@@ -1,0 +1,50 @@
+#maintable {
+    position:absolute;
+    width: 50%;
+    height: 98.5%;
+    margin: auto;
+    float: center;
+    left: 25%;
+}
+
+#title {
+    vertical-align: bottom;
+    height: 0%;
+}
+
+#titleText {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+#tabmenu {
+    width: 33%;
+    vertical-align: top;
+    padding-left: 16px;
+    padding-right: 8px;
+    padding-top: 0px;
+    padding-bottom: 16px;
+}
+
+#tabmenu button {
+    width: 100%;
+    height: 6.25%;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+}
+
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+iframe {
+    border: none;
+}

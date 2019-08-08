@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EPQ Project - Emil Filip</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+    <table id="maintable">
+        <tr>
+            <td id="title" colspan="2">
+                <h1 id="titleText">What is Fusion Energy?</h1>
+            </td>
+        </tr>
+        <tr>
+            <td id="tabmenu">
+                <button onclick="location.href='/index'">Index</button><br><br>
+                <button onclick="location.href='/explanation/1'">Explanation</button><br><br>
+                <button onclick="location.href='/production/1'">Production</button><br><br>
+                <button onclick="location.href='/uses/1'">Uses</button><br><br>
+                <button onclick="location.href='/research/1'">Research</button><br><br>
+                <button onclick="location.href='/future/1'">Future</button><br><br>
+                <button onclick="location.href='/quiz'">Quiz</button><br><br>
+                <button onclick="location.href='/further-reading/1'">Further reading</button>
+            </td>
+            <td>
+                <iframe id="content" src="{{ content }}"></iframe>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
