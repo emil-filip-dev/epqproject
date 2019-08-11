@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>EPQ Project - Emil Filip</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
@@ -24,7 +25,41 @@
                 <button onclick="location.href='/further-reading/1'">Further reading</button>
             </td>
             <td>
-                <iframe id="content" src="{{ content }}"></iframe>
+                <table class="contentTable">
+                    <thead>
+                        <tr>
+                            <td>
+                                <iframe id="content" src="{{ content }}"></iframe>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <button class="pageNavButton" id="backButton"
+                                        style="margin-left: 16px;
+                                               margin-right: 16px;
+                                               margin-top: -8px;
+                                               margin-bottom: -8px;
+                                               float: left;
+                                               visibility: {{ backVisibility }};"
+                                        onclick="location.href='{{ backLocation }}'">
+                                    << Back
+                                </button>
+                                <button class="pageNavButton" id="nextButton"
+                                        style="margin-left: 16px;
+                                               margin-right: 16px;
+                                               margin-top: -8px;
+                                               margin-bottom: -8px;
+                                               float: right;
+                                               visibility: {{ nextVisibility }};"
+                                        onclick="location.href='{{ nextLocation }}'">
+                                    Next >>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </td>
         </tr>
     </table>

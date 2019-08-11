@@ -1,9 +1,11 @@
+body * {
+    font-family: "Open Sans", sans-serif;
+}
+
 #maintable {
-    position:absolute;
+    position: absolute;
     width: 50%;
     height: 98.5%;
-    margin: auto;
-    float: center;
     left: 25%;
 }
 
@@ -20,10 +22,10 @@
 }
 
 #tabmenu {
-    width: 33%;
+    width: 25%;
     vertical-align: top;
     padding-left: 16px;
-    padding-right: 8px;
+    padding-right: 16px;
     padding-top: 0px;
     padding-bottom: 16px;
 }
@@ -35,13 +37,45 @@
     text-decoration: none;
 }
 
-#content {
+.contentTable {
     width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.contentTable th {
     height: 100%;
 }
 
+.contentTable td {
+    height: 0%;
+    border: 1px solid black;
+}
+
+.pageNavButton {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: -8px;
+    margin-bottom: -8px;
+}
+
+#backButton {
+    float: left;
+}
+
+#nextButton {
+    float: right;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    margin-right: 32px;
+    margin-top: 1px;
+    margin-bottom: -1px;
+}
+
 table, th, td {
-    border: 1px solid white;
     border-collapse: collapse;
 }
 
