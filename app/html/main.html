@@ -18,8 +18,6 @@
                 <button onclick="location.href='/index'">Index</button><br><br>
                 <button onclick="location.href='/explanation/1'">Explanation</button><br><br>
                 <button onclick="location.href='/production/1'">Production</button><br><br>
-                <button onclick="location.href='/uses/1'">Uses</button><br><br>
-                <button onclick="location.href='/research/1'">Research</button><br><br>
                 <button onclick="location.href='/future/1'">Future</button><br><br>
                 <button onclick="location.href='/quiz'">Quiz</button><br><br>
                 <button onclick="location.href='/further-reading/1'">Further reading</button>
@@ -37,22 +35,12 @@
                         <tr>
                             <td>
                                 <button class="pageNavButton" id="backButton"
-                                        style="margin-left: 16px;
-                                               margin-right: 16px;
-                                               margin-top: -8px;
-                                               margin-bottom: -8px;
-                                               float: left;
-                                               visibility: {{ backVisibility }};"
+                                        style="visibility: {{ backVisibility }};"
                                         onclick="location.href='{{ backLocation }}'">
                                     << Back
                                 </button>
                                 <button class="pageNavButton" id="nextButton"
-                                        style="margin-left: 16px;
-                                               margin-right: 16px;
-                                               margin-top: -8px;
-                                               margin-bottom: -8px;
-                                               float: right;
-                                               visibility: {{ nextVisibility }};"
+                                        style="visibility: {{ nextVisibility }};"
                                         onclick="location.href='{{ nextLocation }}'">
                                     Next >>
                                 </button>
