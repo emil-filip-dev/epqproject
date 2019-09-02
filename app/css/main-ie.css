@@ -7,23 +7,11 @@ body * {
     width: 50%;
     height: 98.5%;
     left: 25%;
-    top: 0px;
-}
-
-#titleRow, #navRow {
-    height: 0%;
-}
-
-#mainRow, #contentRow {
-    height: 100%;
-}
-
-#contentRow {
-    border: 1px solid black;
 }
 
 #title {
     vertical-align: bottom;
+    height: 0%;
 }
 
 #titleText {

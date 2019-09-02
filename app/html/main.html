@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>EPQ Project - Emil Filip</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="{{ style }}">
 </head>
 <body>
     <table id="maintable">
-        <tr>
+        <tr id="titleRow">
             <td id="title" colspan="2">
                 <h1 id="titleText">What is Fusion Energy?</h1>
             </td>
         </tr>
-        <tr>
+        <tr id="mainRow">
             <td id="tabmenu">
                 <button onclick="location.href='/index'">Index</button><br><br>
                 <button onclick="location.href='/explanation/1'">Explanation</button><br><br>
@@ -24,29 +24,25 @@
             </td>
             <td>
                 <table id="contentTable">
-                    <thead>
-                        <tr>
-                            <td>
-                                <iframe id="content" src="{{ content }}"></iframe>
-                            </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <button class="pageNavButton" id="backButton"
-                                        style="visibility: {{ backVisibility }};"
-                                        onclick="location.href='{{ backLocation }}'">
-                                    << Back
-                                </button>
-                                <button class="pageNavButton" id="nextButton"
-                                        style="visibility: {{ nextVisibility }};"
-                                        onclick="location.href='{{ nextLocation }}'">
-                                    Next >>
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tr id="contentRow">
+                        <td>
+                            <iframe id="content" src="{{ content }}"></iframe>
+                        </td>
+                    </tr>
+                    <tr id="navRow">
+                        <td>
+                            <button class="pageNavButton" id="backButton"
+                                    style="visibility: {{ backVisibility }};"
+                                    onclick="location.href='{{ backLocation }}'">
+                                << Back
+                            </button>
+                            <button class="pageNavButton" id="nextButton"
+                                    style="visibility: {{ nextVisibility }};"
+                                    onclick="location.href='{{ nextLocation }}'">
+                                Next >>
+                            </button>
+                        </td>
+                    </tr>
                 </table>
             </td>
         </tr>
