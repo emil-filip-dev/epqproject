@@ -1,6 +1,18 @@
+/* General tag styling */
+
 body * {
     font-family: "Open Sans", sans-serif;
 }
+
+table, th, td {
+    border-collapse: collapse;
+}
+
+iframe {
+    border: none;
+}
+
+/* The main table */
 
 #maintable {
     position: absolute;
@@ -10,57 +22,95 @@ body * {
     top: 0px;
 }
 
-#titleRow, #navRow {
-    height: 0%;
-}
+/* The title part of the website, including the title image and text */
 
-#mainRow, #contentRow {
-    height: 100%;
-}
-
-#contentRow {
-    border: 1px solid black;
+#titleRow {
+    height: 160px;
 }
 
 #title {
+    overflow: hidden;
+    position: relative;
     vertical-align: bottom;
 }
 
-#titleText {
-    margin-left: 16px;
-    margin-right: 16px;
-    margin-top: 32px;
-    margin-bottom: 16px;
+#titleImage {
+    width: 100%;
+    margin-top: -50%;
+    margin-bottom: -40%;
 }
+
+#titleImage:hover {
+    margin-top: -60%;
+}
+
+#titleText {
+    position: absolute;
+    left: 16px;
+    bottom: -10px;
+}
+
+/* The main row of the table */
+
+#mainRow {
+    height: 100%;
+}
+
+/* The menu of the table, which includes the buttons that take the user to other info tabs */
 
 #tabmenu {
     width: 25%;
     vertical-align: top;
-    padding-left: 16px;
+    padding-left: 1px;
     padding-right: 16px;
-    padding-top: 0px;
+    padding-top: 16px;
     padding-bottom: 16px;
 }
 
 #tabmenu button {
     width: 100%;
-    height: 6.25%;
+    padding-top: 6%;
+    padding-bottom: 6%;
     font-size: 20px;
     text-decoration: none;
+    background-image: linear-gradient(maroon, rgba(230, 0, 0, 1) 40%, yellow);
+    border: 1px solid black;
+    transition: box-shadow 0.4s;
 }
+
+#tabmenu button:hover {
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.2), 0 8px 25px 0 rgba(0,0,0,0.2);
+}
+
+/* Table inside the main row */
 
 #contentTable {
     width: 100%;
+    height: calc(100% - 16px);
+    margin-top: 16px;
+    background: white;
+    border: 2px solid black;
+}
+
+/* The actual content */
+
+#contentRow {
     height: 100%;
     border: 1px solid black;
 }
 
-#contentTable thead {
+#content {
+    width: 100%;
     height: 100%;
+    margin-right: 32px;
+    margin-top: 2px;
+    margin-bottom: -2px;
 }
 
-#contentTable tbody {
-    border: 1px solid black;
+/* The row inside the content table which includes the buttons to navigate between a tab's pages */
+
+#navRow {
+    height: 0%;
 }
 
 .pageNavButton {
@@ -68,6 +118,19 @@ body * {
     margin-right: 16px;
     margin-top: 16px;
     margin-bottom: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-image: linear-gradient(rgba(220, 0, 0, 1), yellow);
+    border: 1px solid black;
+    opacity: 0.6;
+    transition: opacity 0.2s, box-shadow 0.2s;
+}
+
+.pageNavButton:hover {
+    opacity: 1;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,0.2), 0 4px 12px 0 rgba(0,0,0,0.2);
 }
 
 #backButton {
@@ -76,20 +139,4 @@ body * {
 
 #nextButton {
     float: right;
-}
-
-#content {
-    width: 100%;
-    height: 100%;
-    margin-right: 32px;
-    margin-top: 1px;
-    margin-bottom: -1px;
-}
-
-table, th, td {
-    border-collapse: collapse;
-}
-
-iframe {
-    border: none;
 }

@@ -18,8 +18,8 @@ def index():
 def page(page):
 
     style = "main"
-    if using_browser("webkit") or using_browser("edge"):
-        style = "main-ie"
+    # if using_browser("webkit") or using_browser("edge"):
+    #     style = "main-ie"
 
     return render_template("main.html",
                            style="/css/" + style + ".css",
@@ -32,8 +32,8 @@ def page(page):
 def tabbed_page(tab, page):
 
     style = "main"
-    if using_browser("webkit") or using_browser("edge"):
-        style = "main-ie"
+    # if using_browser("webkit") or using_browser("edge"):
+    #     style = "main-ie"
 
     back_page = page - 1
     next_page = page + 1
@@ -65,8 +65,8 @@ def quiz():
 def html(file):
 
     style = "content"
-    if using_browser("webkit") or using_browser("edge"):
-        style = "content-ie"
+    # if using_browser("webkit") or using_browser("edge"):
+    #     style = "content-ie"
 
     return render_template(file,
                            style="/css/" + style + ".css")
