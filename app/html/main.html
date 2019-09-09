@@ -5,9 +5,11 @@
     <title>EPQ Project - Emil Filip</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ style }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
 </head>
 <body>
-    <table id="maintable">
+    <table id="mainTable">
         <tr id="titleRow">
             <td id="title" colspan="2">
                 <img id="titleImage" src="/resources/img/title_image.jpg">
@@ -15,15 +17,19 @@
             </td>
         </tr>
         <tr id="mainRow">
-            <td id="tabmenu">
-                <button onclick="location.href='/index'">Index</button><br><br>
-                <button onclick="location.href='/explanation/1'">Explanation</button><br><br>
-                <button onclick="location.href='/production/1'">Production</button><br><br>
-                <button onclick="location.href='/research/1'">Research</button><br><br>
-                <button onclick="location.href='/future/1'">Future</button><br><br>
-                <button onclick="location.href='/further-reading/1'">Further reading</button>
+            <td id="tabMenuCell" data-currentTab="{{ currentTab }}">
+                <div id="tabMenuButtons">
+                    <button data-tab="index">Index</button><br>
+                    <button data-tab="explanation">Explanation</button><br>
+                    <button data-tab="production">Production</button><br>
+                    <button data-tab="research">Research</button><br>
+                    <button data-tab="future">Future</button><br>
+                    <button data-tab="quiz">Quiz</button><br>
+                    <button data-tab="further-reading">Further reading</button><br>
+                </div>
+                <div id="tabMenuImageContainer"></div>
             </td>
-            <td>
+            <td id="contentCell">
                 <table id="contentTable">
                     <tr id="contentRow">
                         <td>
