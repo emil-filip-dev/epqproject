@@ -2,9 +2,15 @@ $(document).ready(function() {
     // Adjust the table width upon loading the webpage
     adjustMainTableWidth();
 
-    // Adjust the table width whenever the browser is resized
+    // Adjust the resizeables width upon loading the content iframe
+    $("#content").on("load", function() {
+        adjustResizeableElements();
+    });
+
+    // Adjust the table width and resizeables whenever the browser is resized
     $(window).resize(function() {
         adjustMainTableWidth();
+        adjustResizeableElements();
     });
 
     // Add functionality for tab menu buttons once they get clicked
@@ -56,7 +62,38 @@ function adjustMainTableWidth() {
 }
 
 function adjustResizeableElements() {
+    // Hard-coded as a reference
     var maxWidth = 1920;
     var maxTableWidth = maxWidth / 2;
     var maxContentFrameWidth = maxTableWidth * 0.75;
+
+    // Calculate how much to increase the percentage width by
+    var content = $("#content");
+    var contentFrameWidth = $(content).width();
+    var percentIncrease = 100 - ((contentFrameWidth / maxContentFrameWidth) * 100);
+
+    // Do the following for each element that can be resized
+    var resizeables = $(content).contents().find(".resizeable");
+    resizeables.each(function(index) {
+        // Calculate the new percentage width of the element
+        var resizeable = resizeables[index];
+        var percentageWidth = parseFloat($(resizeable).attr("data-initialWidthPercentage"));
+        percentageWidth += percentIncrease;
+        if (percentageWidth > 100) {
+            percentageWidth = 100;
+        }
+
+        // Calculate the percentage top padding so as to maintain the aspect ratio of the image
+        var image = $(resizeable).children("img")[0];
+        var naturalWidth = image.naturalWidth;
+        var naturalHeight = image.naturalHeight;
+        var paddingTop = (naturalHeight / naturalWidth) * percentageWidth;
+
+        // Resize the element
+        $(resizeable)
+        .css({
+            "width": percentageWidth.toString(10) + "%",
+            "padding-top": paddingTop.toString(10) + "%"
+        })
+    })
 }
