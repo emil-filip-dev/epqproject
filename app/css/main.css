@@ -1,7 +1,7 @@
 /* General tag styling */
 
 body {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body * {
@@ -21,7 +21,7 @@ iframe {
 #mainTable {
     position: absolute;
     width: 50%;
-    height: calc(100% - 32px);
+    height: calc(98.5% - 24px);
     left: 25%;
     top: 16px;
 }
